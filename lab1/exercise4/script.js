@@ -11,10 +11,10 @@ do {
     birthYear = Number(birthYear);
 } while (isNaN(birthYear) || birthYear >= 2010 || birthYear <= 0);
 
-// 3. Calculate Age (Assuming current year is 2026 as per system)
+// 3. Calculate Age 
 var age = 2026 - birthYear;
 
 // 4. Write to page
-document.write("Name: " + userName + "<br>");
-document.write("Birth year: " + birthYear + "<br>");
-document.write("Age: " + age);
+document.write("<u><b>Name:</b></u> " + userName + "<br>");
+document.write("<u><b>Birth year:</b></u> " + birthYear + "<br>");
+document.write("<u><b>Age:</b></u> " + age);
