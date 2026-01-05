@@ -15,7 +15,7 @@ function day2Lab() {
 
     // 3. Mobile number validation (11 digits, starts with 010, 011, or 012)
     var mobile;
-    var mobileReg = /^(010|011|012)[0-9]{8}$/;
+    var mobileReg = /^01[012][0-9]{8}$/;
     do {
         mobile = prompt("Enter Mobile Number (11 digits starting with 010|011|012):");
     } while (!mobileReg.test(mobile));

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>DOM Manipulation Lab</title>
+<style>
+body {
+    position: relative;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+</style>
+</head>
+<body>
+<div id="header">
+<img src="hi.jpg" alt="hello" width="300">
+</div>
+<div id="navigation">
+<ul id="nav">
+<li><strong>Memo</strong></li>
+<li><a href="Articles.html">Articles</a></li>
+<li><a href="Photos.html">Photos</a></li>
+<li><a href="About.html">About</a></li>
+<li><a href="Clients.html">Clients</a></li>
+<li><a href="Contact.html">Contact</a></li>
+</ul>
+</div>
+<script>
+// Get references to existing elements
+const header = document.getElementById('header');
+const img = document.querySelector('img');
+const navigation = document.getElementById('navigation');
+const navList = document.getElementById('nav');
+
+// Clone the image 
+const imgClone = img.cloneNode(true);
+
+// Position original image at top-right
+img.style.position = 'absolute';
+img.style.top = '20px';
+img.style.right = '20px';
+img.style.width = '200px';
+
+// Position cloned image at bottom-left
+imgClone.style.position = 'absolute';
+imgClone.style.bottom = '100px';
+imgClone.style.left = '20px';
+imgClone.style.width = '200px';
+document.body.appendChild(imgClone);
+
+// Change list style to circles
+navList.style.listStyleType = 'circle';
+navList.style.paddingLeft = '20px';
+
+// Center navigation in the middle of the page
+navigation.style.position = 'absolute';
+navigation.style.top = '50%';
+navigation.style.left = '50%';
+navigation.style.transform = 'translate(-50%, -50%)';
+navigation.style.textAlign = 'left';
+
+
+</script>
+</body>
+</html>
