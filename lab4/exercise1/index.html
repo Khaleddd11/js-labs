@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>lab4 ex1 clone div</title>
+</head>
+<body>
+
+    <div class="box" onclick="cloneAndColor(this)">Click me</div>
+
+    <script>
+        function cloneAndColor(originalDiv) {
+            var newDiv = originalDiv.cloneNode(true);
+            var randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+            newDiv.style.backgroundColor = randomColor;
+            document.body.appendChild(newDiv);
+        }
+    </script>
+
+</body>
+</html>

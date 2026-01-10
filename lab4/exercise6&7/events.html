@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Object Tasks</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        .task-box {
+            border: 2px solid #333;
+            padding: 20px;
+            margin-bottom: 20px;
+            background-color: #f9f9f9;
+        }
+        input {
+            padding: 10px;
+            font-size: 16px;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="task-box">
+        <h3>Task 6: ASCII & Modifier Detector</h3>
+        <p>Press any key inside this box to see its code:</p>
+        <input type="text" id="asciiInput" placeholder="Press any key..." onkeydown="showAscii(event)">
+    </div>
+
+    <div class="task-box">
+        <h3>Task 7: Numbers Only Input</h3>
+        <p>Try typing letters here (they won't work):</p>
+        <input type="text" id="numInput" placeholder="Enter numbers only..." onkeydown="validateNumber(event)">
+    </div>
+
+    <script>
+        // --- TASK 6: Show ASCII and Modifiers ---
+        function showAscii(e) {
+            // 1. Get the ASCII Code (keyCode)
+            var code = e.keyCode;
+            
+            // 2. Build the message string
+            var msg = "ASCII Code: " + code + "\n";
+            
+            // 3. Check for Modifier Keys (Boolean values)
+            if (e.altKey) {
+                msg += "Alt key is pressed\n";
+            }
+            if (e.ctrlKey) {
+                msg += "Ctrl key is pressed\n";
+            }
+            if (e.shiftKey) {
+                msg += "Shift key is pressed\n";
+            }
+
+            // 4. Alert the result
+            // (I used console.log usually, but the task asked for Alert)
+            alert(msg);
+        }
+
+        // --- TASK 7: Validate Numbers Only ---
+        function validateNumber(e) {
+            // Key Codes for 0-9 are 48-57 (Top Row) and 96-105 (Numpad)
+            // We also must allow "Backspace" (8) so the user can delete!
+            
+            var key = e.keyCode;
+
+            // Logic: IF it is NOT a number AND NOT backspace -> Block it
+            // (48-57 are standard numbers, 96-105 are numpad numbers)
+            if (key !== 8 && (key < 48 || key > 57) && (key < 96 || key > 105)) {
+                
+                // This is the magic line that stops the letter from appearing
+                e.preventDefault(); 
+                
+                console.log("Blocked key: " + key); // For testing
+            }
+        }
+    </script>
+
+</body>
+</html>

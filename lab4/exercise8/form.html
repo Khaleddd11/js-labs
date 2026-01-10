@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Validation & Table</title>
+    <style>
+        body { font-family: sans-serif; display: flex; justify-content: center; margin-top: 50px; }
+        
+        /* The Yellow Container */
+        .container {
+            background-color: #F7D060; /* Matches the yellow in your image */
+            padding: 30px;
+            width: 600px;
+            border: 2px solid #ccc;
+            box-shadow: 5px 5px 10px #888;
+        }
+
+        /* Form Layout */
+        .form-row { margin-bottom: 15px; }
+        label { display: inline-block; width: 60px; font-weight: bold; }
+        input { padding: 5px; width: 200px; }
+        
+        /* Error Styling */
+        .error-msg { color: red; font-size: 12px; margin-left: 10px; display: none; }
+        .invalid { border: 2px solid red; background-color: #ffe6e6; }
+
+        /* Buttons */
+        .btn-group { margin-left: 65px; margin-bottom: 20px; }
+        button { padding: 5px 15px; cursor: pointer; }
+
+        /* Table Styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 2px solid black;
+            background-color: transparent;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+        th { background-color: #F7D060; border-bottom: 2px solid black; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <form id="userForm" onsubmit="validateAndAdd(event)">
+            
+            <div class="form-row">
+                <label>Name</label>
+                <input type="text" id="name">
+                <span id="nameErr" class="error-msg">this field is required</span>
+            </div>
+
+            <div class="form-row">
+                <label>Age</label>
+                <input type="text" id="age">
+                <span id="ageErr" class="error-msg">this field is required</span>
+            </div>
+
+            <div class="form-row">
+                <label>E-mail</label>
+                <input type="text" id="email">
+                <span id="emailErr" class="error-msg">this field is required</span>
+            </div>
+
+            <div class="btn-group">
+                <button type="submit">Add</button>
+                <button type="button" onclick="resetForm()">Reset</button>
+            </div>
+        </form>
+
+        <table id="dataTable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>E-mail</th>
+                </tr>
+            </thead>
+            <tbody>
+                </tbody>
+        </table>
+    </div>
+
+    <script src="form.js"></script>
+</body>
+</html>

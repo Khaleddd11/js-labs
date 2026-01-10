@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Marble Animation</title>
+    <script src="marbles.js"></script>
+    <style>
+        body {
+            text-align: center;
+            margin-top: 50px;
+        }
+        /* Style for the marbles */
+        img {
+            width: 50px;
+            height: 50px;
+            margin: 10px;
+            cursor: pointer;
+            transition: transform 0.2s; /* visual effect */
+        }
+        img:hover {
+            transform: scale(1.2);
+        }
+        p {
+            font-family: sans-serif;
+            color: #555;
+        }
+    </style>
+</head>
+<body onload="startAnim()"> <h2>Marble Animation Task</h2>
+    <p>Hover over any marble to STOP. Move mouse away to START.</p>
+    <p><strong>Bonus:</strong> Click any marble to Reverse Direction!</p>
+    <br>
+
+    <div id="container">
+        <img src="marble2.jpg" onmouseover="stopAnim()" onmouseout="startAnim()" onclick="reverseDirection()">
+        <img src="marble1.jpg" onmouseover="stopAnim()" onmouseout="startAnim()" onclick="reverseDirection()">
+        <img src="marble1.jpg" onmouseover="stopAnim()" onmouseout="startAnim()" onclick="reverseDirection()">
+        <img src="marble1.jpg" onmouseover="stopAnim()" onmouseout="startAnim()" onclick="reverseDirection()">
+        <img src="marble1.jpg" onmouseover="stopAnim()" onmouseout="startAnim()" onclick="reverseDirection()">
+    </div>
+
+</body>
+</html>
