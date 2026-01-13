@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome Page</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; margin-top: 50px; }
+        .info-box { 
+            display: inline-block; 
+            text-align: left; 
+            border: 2px solid #4CAF50; 
+            padding: 20px; 
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 id="greeting">Welcome!</h1>
+    
+    <div class="info-box">
+        <h3>Your Profile Info:</h3>
+        <p><strong>Address:</strong> <span id="dispAddress"></span></p>
+        <p><strong>Gender:</strong> <span id="dispGender"></span></p>
+        <p><strong>Email:</strong> <span id="dispEmail"></span></p>
+        <p><strong>Mobile:</strong> <span id="dispMobile"></span></p>
+    </div>
+
+    <script>
+        // here i want to get the query string which is the part after "?" in the URL
+        //  ?name=John&email=john@test.com...
+        var queryString = window.location.search;
+        
+        var urlParams = new URLSearchParams(queryString);
+
+        var name = urlParams.get('name');
+        var email = urlParams.get('email');
+        var mobile = urlParams.get('mobile');
+        var address = urlParams.get('address');
+        var gender = urlParams.get('gender');
+
+        var title = (gender === "Male") ? "Mr." : "Ms.";
+
+        document.getElementById("greeting").innerText = "Welcome, " + title + " " + name;
+        document.getElementById("dispAddress").innerText = address;
+        document.getElementById("dispGender").innerText = gender;
+        document.getElementById("dispEmail").innerText = email;
+        document.getElementById("dispMobile").innerText = mobile;
+    </script>
+
+</body>
+</html>

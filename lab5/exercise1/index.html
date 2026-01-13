@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Window Object Lab</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        button {
+            padding: 12px 24px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Window Object Lab</h2>
+    <p>Click the button to open a child window that closes after 5 seconds.</p>
+    
+    <button id="open-button">Open Child Window</button>
+
+    <script>
+        const openButton = document.querySelector("#open-button");
+
+        openButton.addEventListener('click', () => {
+            
+            const newWindow = window.open("", "_blank", "width=400,height=400");
+
+            newWindow.document.write("<h3>Hello!</h3>");
+            newWindow.document.write("<p>I will close in 5 seconds</p>");
+            
+            setTimeout(() => {
+                newWindow.close();
+                console.log("Child window closed automatically"); 
+            }, 5000);
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Clock</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; margin-top: 50px; }
+        #clockDisplay {
+            font-size: 40px;
+            margin-top: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+        button { padding: 10px 20px; font-size: 16px; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <button onclick="startClock()">Start clock</button>
+
+    <div id="clockDisplay">Press Start...</div>
+
+    <script>
+        var timer; 
+
+        function startClock() {
+            alert("Clock Started"); 
+
+            // initial call to display time immediately so we dontt wait for 1 secondd 
+            updateTime();
+
+            // update every sec
+            timer = setInterval(updateTime, 1000); 
+        }
+
+        function updateTime() {
+            var now = new Date()
+            document.getElementById("clockDisplay").innerText = now.toLocaleTimeString();
+        }
+
+        // event Listener for "Alt + w" to Stop
+        document.addEventListener("keydown", function(event) {
+            // Check if Alt is pressed AND the key is 'w'
+            if (event.altKey && event.key.toLowerCase() === 'w') {
+                clearInterval(timer); 
+                alert("Clock stopped"); 
+            }
+        });
+    </script>
+
+</body>
+</html>

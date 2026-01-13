@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; margin-top: 50px; }
+        form { display: inline-block; text-align: left; padding: 20px; border: 1px solid #ccc; }
+        div { margin-bottom: 15px; }
+        label { display: inline-block; width: 100px; }
+    </style>
+</head>
+<body>
+
+    <h2>Registration Form</h2>
+
+    <form action="welcome.html" method="GET">
+        <div>
+            <label>Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div>
+            <label>Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div>
+            <label>Mobile:</label>
+            <input type="text" id="mobile" name="mobile" required>
+        </div>
+        <div>
+            <label>Address:</label>
+            <input type="text" id="address" name="address" required>
+        </div>
+        <div>
+            <label>Gender:</label>
+            <input type="radio" name="gender" value="Male" checked> Male
+            <input type="radio" name="gender" value="Female"> Female
+        </div>
+        
+        <button type="submit">Register</button>
+    </form>
+
+    <script>
+        //  Show"timeout after 30 seconds if no data entered.
+        setTimeout(function() {
+            var nameField = document.getElementById("name").value;
+            var emailField = document.getElementById("email").value;
+
+            // If name and email are still empty after 30 seconds
+            if (nameField === "" && emailField === "") {
+                alert("Timeout! You have not entered any data yet.");
+            }
+        }, 30000);
+    </script>
+
+</body>
+</html>
