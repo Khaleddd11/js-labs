@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Tabs</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        
+        .tab-container { display: flex; gap: 5px; flex-wrap: wrap; margin-bottom: 20px; }
+        
+        button {
+            padding: 10px 20px;
+            cursor: pointer;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+        
+        button:hover { background-color: #ddd; }
+        
+        /* highlightt active tab */
+        button.active {
+            background-color: #007BFF;
+            color: white;
+            border-color: #0056b3;
+        }
+
+        /* style for posts list */
+        #posts-container { border: 1px solid #ddd; padding: 20px; background: #fafafa; }
+        h3 { margin-top: 0; color: #333; }
+        li { margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+
+    <h2>User posts viewer</h2>
+
+    <div id="tabs" class="tab-container"></div>
+
+    <div id="posts-container">
+        <p>please click a user tab to load their posts</p>
+    </div>
+
+    <script src="tabs.js"></script>
+</body>
+</html>
